@@ -1,5 +1,4 @@
 package pages.ClassPages
-
 import geb.Page
 
 /**
@@ -7,17 +6,15 @@ import geb.Page
  */
 class TurmasPage extends Page {
 
-    static url = "class/turmas"
+    static url = "turma/index"
 
     static at = {
-        title ==~ /Turmas/
+        title ==~ /Turma List/
     }
 
-    def assertClass(id, periodo){
-
-    }
-
-    def assertNotDuplicateClass(id, periodo){
-
+    boolean confirmTurma(String id, String periodo){
+        boolean r = false
+        boolean findTurma = $("tr").has("td", text: periodo).find("td").has("a", text: id)
+        return findTurma
     }
 }
