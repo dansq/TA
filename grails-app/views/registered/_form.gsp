@@ -1,16 +1,5 @@
 <%@ page import="ta.Registered" %>
 
-
-
-<div class="fieldcontain ${hasErrors(bean: registeredInstance, field: 'criteriaAndEvaluations', 'error')} ">
-	<label for="criteriaAndEvaluations">
-		<g:message code="registered.criteriaAndEvaluations.label" default="Criteria And Evaluations" />
-		
-	</label>
-	<g:select name="criteriaAndEvaluations" from="${ta.EvaluationsByCriterion.list()}" multiple="multiple" optionKey="id" size="5" value="${registeredInstance?.criteriaAndEvaluations*.id}" class="many-to-many"/>
-
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: registeredInstance, field: 'stdt', 'error')} required">
 	<label for="stdt">
 		<g:message code="registered.stdt.label" default="Stdt" />
